@@ -1,0 +1,65 @@
+body{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+
+}
+
+.example-container {
+    width: 100vw;
+min-height:89%;
+  }
+
+  mat-drawer{
+    width: 20%;
+  } 
+
+  mat-form-field{
+ 
+    width: 100%;
+
+  }
+
+
+  .mat-drawer-container{
+    display: block;
+   
+    height:48% ;
+    
+  }
+
+  .messageblock{
+    height: 90%;    
+    overflow-y: scroll;
+    margin-left: 2rem;
+  }
+
+  .inputfield{
+    height: 4%;
+
+  }
+
+  .styling{
+    color: rgba(238, 17, 124, 0.434);
+  }
+
+.typingclass{
+  margin-top: 10px;
+  color:cadetblue;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .mat-drawer {
+    width: 40%; 
+  }
+  .mat-drawer-content{
+    width: 60%;
+    overflow-x: scroll;
+  }
+}
+
+
+
+ 

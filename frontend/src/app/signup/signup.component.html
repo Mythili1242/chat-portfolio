@@ -1,0 +1,55 @@
+<body>
+  <app-navbar [ipsignup]=true></app-navbar>
+<div fxLayoutAlign="center center"   >
+    <div fxFlex="40" >
+        <h1 fxLayoutAlign="center center" class="sign" >SIGNUP FORM</h1>
+    <form [formGroup]="signup" (submit)="onSubmit(signup.value)" class="form" >
+        <mat-form-field appearance="fill" fxFlexFill>
+          <mat-label>Enter Username</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="uname" (keyup)="checkUname($event)" >
+          <!-- (blur)="checkUname($event) -->
+          <!-- blur is used when input field is loosing focus -->
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+          <mat-error *ngIf="signup.get('uname')?.errors?.['required']">
+            Please enter valid first name
+          </mat-error>
+          <mat-error *ngIf="signup.get('uname')?.errors?.['minlength']">
+              min length is 5 characters
+            </mat-error>
+            <mat-error *ngIf="signup.get('uname')?.errors?.['maxlength']">
+              max length is 8 characters
+            </mat-error>
+        </mat-form-field>      
+        <p *ngIf="checkedvalue==='exists'" class="unameerror">Username already exists</p>
+    
+        <mat-form-field appearance="fill" fxFlexFill>
+          <mat-label>Enter email</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="email" >
+          <mat-icon matSuffix>email</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+          <mat-error *ngIf="signup.get('email')?.errors?.['required']">
+            please enter  email
+          </mat-error>
+          <mat-error *ngIf="signup.get('email')?.errors?.['pattern']">
+            please enter valid email
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" fxFlexFill>
+          <mat-label>Enter Password</mat-label>
+          <input matInput placeholder="Placeholder" type="password" formControlName="pwd">
+          <mat-icon matSuffix>password</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+          <mat-error *ngIf="signup.get('pwd')?.errors?.['required']">Please enter password</mat-error>
+          <mat-error *ngIf="signup.get('pwd')?.errors?.['pattern']">
+            Password should contain atleast 1capital,1Small,1 Special character,1 Number and minimum of 5 characters
+          </mat-error>
+        </mat-form-field>
+        <div class="container">
+        <button mat-raised-button [disabled]="signup.get('email')?.errors || signup.get('pwd')?.errors || signup.get('uname')?.errors" style="color: rgba(221, 14, 114, 0.434);text-shadow: 0px 0px 16px  rgba(221, 14, 114, 0.434);" class="butn">Submit</button>
+      </div>
+      </form>
+    </div>
+</div>
+</body>

@@ -1,0 +1,18 @@
+    <p>
+        <mat-toolbar >   
+          <span><a href="/"><img src="../../assets/images/connect1.png" alt="no img"/></a></span>  
+          <!-- <span *ngIf="uname" class="welcome" style="text-align: center;">Welcome {{uname}}</span> -->
+          <div class="toolbar-content">
+            
+            <span *ngIf="uname" class="center-text" style="text-align: center;">Welcome {{uname}}</span>
+          </div>
+          <ul class="navitems">
+            <li *ngIf="iplogin===false&&ipsignup==false&&chat==false"><a href="/signup" routerLinkActive="active" [routerLinkActiveOptions]= {exact:true} [ngStyle]="{'margin-right':(ipsignup==false) ? '15px' : '0px'}" >Signup</a></li>
+            <li *ngIf="iplogin===false&&chat==false"><a href="/login" routerLinkActive="active" [routerLinkActiveOptions]= {exact:true} >Login</a></li>
+            <li *ngIf="iplogin===false && logout===false && ipsignup==false"><a href="/" routerLinkActive="active" [routerLinkActiveOptions]= {exact:true} class="log" >Logout</a></li>
+        </ul>
+        </mat-toolbar>
+      </p>
+  
+   
+       

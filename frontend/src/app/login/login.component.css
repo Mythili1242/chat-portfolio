@@ -1,0 +1,47 @@
+body {
+  background-image: url("https://img.freepik.com/free-vector/artistic-pink-watercolor-background_1116-212.jpg?w=740&t=st=1685694906~exp=1685695506~hmac=2421c55266f50e1f14bf7ea6d0fde8936f75dbb8935ce4fac40667aa0181d4f3");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sign {
+  margin-top: 10%;
+  font-weight: bolder;
+  color: rgba(221, 14, 114, 0.434);
+  text-shadow: 0 0 6px rgba(221, 14, 114, 0.434);
+}
+
+.form {
+  margin-top: 8%;
+}
+
+.butn {
+  margin-top: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-toolbar {
+  background-color: rgba(221, 14, 114, 0.434);
+  color: white;
+}
+
+.navitems {
+  list-style-type: none;
+  margin-left: auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.marq {
+  color: rgba(221, 14, 114, 0.434);
+  text-shadow: 0 0 6px rgba(221, 14, 114, 0.434);
+  margin-top: 5%;
+}/*# sourceMappingURL=login.component.css.map */

@@ -1,0 +1,17 @@
+body {
+  background-image: url("https://img.freepik.com/free-vector/artistic-pink-watercolor-background_1116-212.jpg?w=740&t=st=1685694906~exp=1685695506~hmac=2421c55266f50e1f14bf7ea6d0fde8936f75dbb8935ce4fac40667aa0181d4f3");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-item {
+  height: 630px;
+}
+
+.carousel {
+  margin-top: -12px;
+}
+
+.img2 {
+  color: black;
+}/*# sourceMappingURL=home.component.css.map */

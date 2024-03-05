@@ -1,0 +1,31 @@
+<app-navbar [uname]="uname" [chat]=true></app-navbar>
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+      <!-- <button (click)="delete()">Delete chat</button> -->
+      <p>Participants online:</p>
+      <mat-card *ngFor="let i of userslist"  >
+        <!-- [(ngModel)]="userslist" -->
+        <mat-card-content>{{i}}</mat-card-content>
+      </mat-card>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="messageblock">
+      <div *ngFor="let message of messages" >
+        <strong class="styling">{{ message.sender | uppercase}}:</strong> {{ message.content }}
+       
+      </div>
+      <div *ngIf="typingUser.length > 0" class="typingclass">
+        {{ typingUser.join(', ') }} {{ typingUser.length === 1 ? 'is' : 'are' }} typing...
+      </div>
+    </div>
+
+     <div class="inputfield">
+        <mat-form-field >
+       
+        <input type="text" matInput [(ngModel)]="message" name="msges" placeholder="Type your message"  (keydown.enter)="sendMessage()" (focus)="sendTypingEvent()" (blur)="sendStopTypingEvent()"/>
+        <!-- (input)="sendTypingEvent" -->
+      </mat-form-field>
+    </div>
+     
+    </mat-drawer-content>
+  </mat-drawer-container>

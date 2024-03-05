@@ -1,0 +1,34 @@
+<body>
+<app-navbar [iplogin]=true></app-navbar>
+<div fxLayoutAlign="center center"   >
+        <div fxFlex="40" >
+            <h1 fxLayoutAlign="center center" class="sign" >LOGIN FORM</h1>
+        <form [formGroup]="login" (submit)="onSubmit(login.value)" class="form" >
+            <mat-form-field appearance="fill" fxFlexFill>
+              <mat-label>Enter Username</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="uname"  >
+              <!-- (blur)="checkUname($event) -->
+              <!-- blur is used when input field is loosing focus -->
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-hint>Hint</mat-hint> -->
+              <mat-error *ngIf="login.get('uname')?.errors?.['required']">
+                Please enter valid first name
+              </mat-error>
+            </mat-form-field>      
+            <mat-form-field appearance="fill" fxFlexFill>
+              <mat-label>Enter Password</mat-label>
+              <input matInput placeholder="Placeholder" type="password" formControlName="pwd">
+              <mat-icon matSuffix>password</mat-icon>
+              <!-- <mat-hint>Hint</mat-hint> -->
+              <mat-error *ngIf="login.get('pwd')?.errors?.['required']">Please enter password</mat-error>
+                </mat-form-field>
+            <div class="container">
+            <button mat-raised-button style="color: rgba(221, 14, 114, 0.434);text-shadow: 0px 0px 16px  rgba(221, 14, 114, 0.434);" class="butn">Submit</button>
+          </div>
+          <br>
+          <marquee *ngIf="loginmsg" class="marq">*** {{loginmsg | uppercase}} ***</marquee>
+          </form>
+        </div>
+    </div>
+    </body>
+    
